@@ -1,0 +1,5 @@
+# Пути считаются от report.typ. Порядок в списке задаёт порядок глав.
+chapters = [
+  "sections/chapters/20-task.typ",
+  "sections/chapters/30-implementation.typ",
+]

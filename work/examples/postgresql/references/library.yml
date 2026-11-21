@@ -1,0 +1,55 @@
+kon2017:
+  type: article
+  author: Конюхов, В. Г.
+  title: База данных. Понятие, значение и роль в современном мире
+  date: 2017
+  language: ru
+  page-range: 61-63
+  parent:
+    type: periodical
+    title: Системные технологии
+    issue: 24
+
+docpsql:
+  type: web
+  title: Официальная документация PostgreSQL
+  language: ru
+  url:
+    value: https://postgrespro.ru/docs?ysclid=ldeiuoyqev648714874
+    date: 2023-01-31
+
+nikov2020:
+  type: book
+  author: ["Новиков, Б. А.", "Горшкова, Е. А.", "Графеева, Н. Г."]
+  editor: Рогов, Е. В.
+  title: "Основы технологий баз данных: учеб. пособие"
+  edition: 2
+  publisher:
+    name: ДМК Пресс
+    location: М.
+  date: 2020
+  page-total: 582
+  language: ru
+
+rogov2020:
+  type: book
+  author: Рогов, Е. В.
+  title: PostgreSQL изнутри
+  publisher:
+    name: ДМК Пресс
+    location: М.
+  date: 2022
+  page-total: 660
+  language: ru
+
+morguniv2018:
+  type: book
+  author: Моргунов, Е. П.
+  editor: ["Рогов, Е. В.", "Лузанов, П. В."]
+  title: "PostgreSQL. Основы языка SQL: учеб. пособие"
+  publisher:
+    name: БХВ-Петербург
+    location: СПб.
+  date: 2018
+  page-total: 336
+  language: ru

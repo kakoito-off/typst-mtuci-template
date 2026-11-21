@@ -1,0 +1,28 @@
+-- Cоздаем таблицу Группа
+create table sgroup (
+id integer not null,
+group_name varchar(40),
+primary key (id));  -- уникальный ключ id
+-- Cоздаем таблицу Студент
+create table student (
+id integer not null,
+id_group integer not null, -- поле для связи с таблицей Группа
+student_name varchar(40),
+last_name varchar(40),
+middle_name varchar(40),
+sex char(1),
+age smallint,
+primary key (id), -- уникальный ключ id
+foreign key (id_group) references sgroup (id)); -- определение связи с таблицей Группа
+-- Cоздаем таблицу Хобби
+create table hobby (
+id integer not null, -- уникальный ключ
+hobby_name varchar(100),
+primary key (id)); -- уникальный ключ id
+-- Cоздаем таблицу Студент-Хобби
+create table student_hobby (
+id_student integer not null, -- поле для связи с таблицей Студент
+id_hobby integer not null, -- поле для связи с таблицей Хобби
+primary key (id_student, id_hobby), -- уникальный ключ составной id_student, id_hobby
+foreign key (id_hobby) references hobby (id), -- определение связи с таблицей Хобби
+foreign key (id_student) references student (id)); -- определение связи с таблицей Студент

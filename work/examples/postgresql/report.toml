@@ -1,0 +1,26 @@
+# Поля титульного листа. Тема и версия скрываются, если строка пуста.
+department = "Системное программирование"
+discipline = "Математические основы баз данных"
+lab-number = 7
+theme = ""
+revision = "v. 10"
+city = "Москва"
+year = 2026
+
+[student]
+name = "Фамилия И. О."
+group = "БФИхххх"
+
+[reviewer]
+name = "Полищук Ю. В."
+position = "д.т.н., профессор"
+
+[sections]
+# Справка включается при наличии групп или записей с меткой own.
+bibliographic-note = false
+examples = true
+
+[bibliography]
+# Поддерживаются Hayagriva YAML и JSON с записями article и patent.
+file = "references/library.yml"
+publications = "references/publications.yml"

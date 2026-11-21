@@ -1,0 +1,8 @@
+drop table if exists sgroup; -- удаляем таблицу если она существует
+create table sgroup ( -- создаем таблицу группа
+id integer not null,
+group_name varchar(40),
+primary key (id)); -- уникальный ключ id
+insert into sgroup (id, group_name)  -- добавляем 1 млн. записей
+values (generate_series(1,1000000), md5(random()::text));
+analyze sgroup; -- обновим статистику по таблице

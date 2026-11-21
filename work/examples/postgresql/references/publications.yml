@@ -1,0 +1,6 @@
+# Для справки добавьте группы и ключи записей из library.yml.
+# - title: Публикации ВАК
+#   sources: [article-key]
+# - title: Патенты
+#   sources: [patent-key]
+[]

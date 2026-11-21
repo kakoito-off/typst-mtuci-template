@@ -1,0 +1,15 @@
+# PDF, которые собираются из файлов Typst.
+**/report.pdf
+
+# Промежуточные файлы LaTeX.
+*.aux
+*.log
+*.synctex.gz
+*.toc
+_minted/
+
+# Локальные настройки и переносимый снимок Git.
+.agents/
+.aws/
+.codex/
+*.bundle

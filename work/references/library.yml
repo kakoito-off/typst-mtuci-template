@@ -1,0 +1,14 @@
+typst-modules:
+  type: web
+  title: Модули и подключение файлов в Typst
+  url: https://typst.app/docs/reference/scripting/#modules
+
+typst-heading:
+  type: web
+  title: Параметры заголовков в Typst
+  url: https://typst.app/docs/reference/model/heading/
+
+typst-bibliography:
+  type: web
+  title: Библиография в Typst
+  url: https://typst.app/docs/reference/model/bibliography/

@@ -1,0 +1,5 @@
+QUERY PLAN
+Index Scan using idx_sgroup_group_name on sgroup (cost=0.42..8.44 rows=1 width=37) (actual time=0.053..0.054 rows=1 loops=1)
+Index Cond: ((group_name)::text = '02ИН'::text)
+Planning Time: 0.165 ms
+Execution Time: 0.066 ms

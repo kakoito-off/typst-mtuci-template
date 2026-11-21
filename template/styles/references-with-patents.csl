@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="in-text" default-locale="ru-RU">
+  <info>
+    <title>МТУСИ — числовые ссылки и записи о патентах</title>
+    <id>https://example.org/styles/mtuci-report-references</id>
+    <updated>2026-11-21T00:00:00+00:00</updated>
+  </info>
+  <macro name="author">
+    <names variable="author">
+      <name name-as-sort-order="all" sort-separator=" " initialize-with=". " delimiter=", "/>
+    </names>
+  </macro>
+  <macro name="year">
+    <date variable="issued"><date-part name="year"/></date>
+  </macro>
+  <citation collapse="citation-number">
+    <sort><key variable="citation-number"/></sort>
+    <layout prefix="[" suffix="]" delimiter=", ">
+      <group delimiter=", ">
+        <text variable="citation-number"/>
+        <text variable="locator"/>
+      </group>
+    </layout>
+  </citation>
+  <bibliography second-field-align="flush">
+    <layout suffix=".">
+      <text variable="citation-number" suffix=". "/>
+      <group delimiter=". ">
+        <group delimiter=" ">
+          <text macro="author" suffix="."/>
+          <text variable="title"/>
+        </group>
+        <choose>
+          <if type="patent">
+            <text variable="number" prefix="Пат. № "/>
+            <text variable="note"/>
+          </if>
+          <else>
+            <text variable="container-title" prefix="// "/>
+            <text variable="edition" suffix="-е изд."/>
+            <group delimiter=", ">
+              <group delimiter=": ">
+                <text variable="publisher-place"/>
+                <text variable="publisher"/>
+              </group>
+              <text macro="year"/>
+              <text variable="volume" prefix="Т. "/>
+              <text variable="issue" prefix="№ "/>
+              <text variable="page" prefix="С. "/>
+              <text variable="number-of-pages" suffix=" с."/>
+            </group>
+            <names variable="editor">
+              <label form="verb-short" suffix=" "/>
+              <name initialize-with=". "/>
+            </names>
+            <group>
+              <text variable="URL" prefix="URL: "/>
+              <date variable="accessed" prefix=" (дата обращения: " suffix=")">
+                <date-part name="day" form="numeric-leading-zeros" suffix="."/>
+                <date-part name="month" form="numeric-leading-zeros" suffix="."/>
+                <date-part name="year"/>
+              </date>
+            </group>
+          </else>
+        </choose>
+      </group>
+    </layout>
+  </bibliography>
+</style>

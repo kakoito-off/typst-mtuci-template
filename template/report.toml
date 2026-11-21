@@ -1,0 +1,26 @@
+# Поля титульного листа. Тема и версия скрываются, если строка пуста.
+department = "Название кафедры"
+discipline = "Название дисциплины"
+lab-number = 1
+theme = "Тема лабораторной работы"
+revision = ""
+city = "Москва"
+year = 2026
+
+[student]
+name = "Фамилия И. О."
+group = "БФИ0000"
+
+[reviewer]
+name = "Фамилия И. О."
+position = "Должность преподавателя"
+
+[sections]
+# Справка включается при наличии групп или записей с меткой own.
+bibliographic-note = false
+examples = false
+
+[bibliography]
+# Поддерживаются Hayagriva YAML и JSON с записями article и patent.
+file = "references/library.yml"
+publications = "references/publications.yml"

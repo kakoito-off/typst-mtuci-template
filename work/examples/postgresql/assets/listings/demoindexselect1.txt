@@ -1,0 +1,2 @@
+explain analyze select *
+from sgroup where group_name = '02ИН';

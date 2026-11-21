@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plist version="1.0">
+<dict>
+  <key>name</key><string>МТУСИ</string>
+  <key>settings</key>
+  <array>
+    <dict>
+      <key>settings</key>
+      <dict><key>foreground</key><string>#171717</string></dict>
+    </dict>
+    <dict>
+      <key>scope</key><string>keyword, storage</string>
+      <key>settings</key>
+      <dict><key>foreground</key><string>#116627</string><key>fontStyle</key><string>bold</string></dict>
+    </dict>
+    <dict>
+      <key>scope</key><string>comment</string>
+      <key>settings</key>
+      <dict><key>foreground</key><string>#365D66</string><key>fontStyle</key><string>italic</string></dict>
+    </dict>
+    <dict>
+      <key>scope</key><string>string, constant</string>
+      <key>settings</key>
+      <dict><key>foreground</key><string>#83262B</string></dict>
+    </dict>
+  </array>
+</dict>
+</plist>

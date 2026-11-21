@@ -1,0 +1,23 @@
+department = "Системное программирование"
+discipline = "Подготовка технической документации"
+lab-number = 1
+theme = "Структура и использование шаблона отчёта МТУСИ в Typst"
+revision = ""
+city = "Москва"
+year = 2026
+
+[student]
+name = "Фамилия И. О."
+group = "БФИ0000"
+
+[reviewer]
+name = "Фамилия И. О."
+position = "Должность преподавателя"
+
+[sections]
+bibliographic-note = false
+examples = false
+
+[bibliography]
+file = "references/library.yml"
+publications = "references/publications.yml"

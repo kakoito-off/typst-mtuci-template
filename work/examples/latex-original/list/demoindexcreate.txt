@@ -1,0 +1,6 @@
+create index idx_sgroup_group_name
+on sgroup(group_name);
+-- drop index idx_sgroup_group_name; -- для удаления индекса
+analyze sgroup;
+explain analyze select *
+from sgroup where group_name = '02ИН';

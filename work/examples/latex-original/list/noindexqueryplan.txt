@@ -1,0 +1,9 @@
+QUERY PLAN
+Gather (cost=1000.00..22875.45 rows=1 width=37) (actual time=0.237..80.441 rows=1 loops=1)
+Workers Planned: 2
+Workers Launched: 2
+-> Parallel Seq Scan on sgroup (cost=0.00..21875.35 rows=1 width=37) (actual time=21.149..46.222 rows=0 loops=3)
+Filter: ((group_name)::text = '02ИН'::text)
+Rows Removed by Filter: 333334
+Planning Time: 0.056 ms
+Execution Time: 80.452 ms
