@@ -1,5 +1,4 @@
 chapters = [
   "sections/chapters/20-structure.typ",
-  "sections/chapters/30-authoring.typ",
-  "sections/chapters/40-references.typ",
+  "sections/chapters/30-styles.typ",
 ]
