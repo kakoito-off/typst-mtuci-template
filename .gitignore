@@ -13,3 +13,6 @@ _minted/
 .aws/
 .codex/
 *.bundle
+
+# Архив проекта для передачи.
+/mtuci-typst.tar.gz

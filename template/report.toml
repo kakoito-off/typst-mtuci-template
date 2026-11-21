@@ -22,5 +22,6 @@ examples = false
 
 [bibliography]
 # Поддерживаются Hayagriva YAML и JSON с записями article и patent.
+# Язык источника указывается в language (YAML) или lang (JSON).
 file = "references/library.yml"
 publications = "references/publications.yml"

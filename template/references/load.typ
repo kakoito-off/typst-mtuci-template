@@ -2,7 +2,7 @@
   let common = (
     type: record.type,
     author: record.authors.map(person => person.family + ", " + person.given),
-    language: record.lang,
+    language: record.at("lang", default: "ru"),
     title: record.title,
     tags: record.at("tags", default: ()),
   )

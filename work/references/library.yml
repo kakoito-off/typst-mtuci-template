@@ -1,14 +1,26 @@
 typst-modules:
   type: web
-  title: Модули и подключение файлов в Typst
+  title: Scripting
+  language: en
   url: https://typst.app/docs/reference/scripting/#modules
 
 typst-heading:
   type: web
-  title: Параметры заголовков в Typst
+  title: Heading
+  language: en
   url: https://typst.app/docs/reference/model/heading/
 
 typst-bibliography:
   type: web
-  title: Библиография в Typst
+  title: Bibliography
+  language: en
   url: https://typst.app/docs/reference/model/bibliography/
+
+gost-705:
+  type: web
+  title: "ГОСТ Р 7.0.5–2008. Библиографическая ссылка. Общие требования и правила составления"
+  language: ru
+  date: 2008
+  url:
+    value: https://protect.gost.ru/gost/details/2eef7820-44bc-49a4-bf1f-fe51c54039dc
+    date: 2026-11-21

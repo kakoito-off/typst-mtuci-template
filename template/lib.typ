@@ -1,6 +1,7 @@
 #import "references/load.typ": library
 #import "styles/template.typ": report-style
 #import "styles/heading.typ": centered-section
+#import "styles/bibliography.typ": bibliography-citations
 #import "styles/listing.typ": listing
 #import "styles/table.typ": continued-table
 #import "styles/example.typ": example-divider, example-emphasis
@@ -9,10 +10,14 @@
 #import "sections/bibliographic-note.typ": bibliographic-note
 
 #let lab-report(data, chapters, include-section, read-data) = {
+  let bibliography-file = data.bibliography.file
+  let sources = library(read-data(bibliography-file), json-format: bibliography-file.ends-with(".json"))
+
   show: report-style.with(
     author: data.student.name,
     title: if data.theme != "" { data.theme } else { [Лабораторная работа № #data.lab-number] },
   )
+  show: bibliography-citations.with(sources)
 
   title-page(data)
   include "sections/contents.typ"
@@ -32,8 +37,6 @@
   centered-section[Заключение]
   include-section("sections/conclusion.typ")
 
-  let bibliography-file = data.bibliography.file
-  let sources = library(read-data(bibliography-file), json-format: bibliography-file.ends-with(".json"))
   reference-section(sources)
 
   if data.sections.bibliographic-note {
