@@ -17,10 +17,6 @@
     set text(hyphenate: false)
     set par(justify: false, first-line-indent: 0pt, leading: 5.5pt)
     let center-width = 175mm
-    place(top + left, dx: 20mm, dy: 10mm, rect(
-      width: 180mm, height: 277mm, stroke: 0.5mm,
-    ))
-
     place(top + left, dx: 25mm, dy: 15.5mm, block(width: center-width, align(center)[
       #image("../assets/mtuci-logo.svg", width: 21mm, alt: "Логотип МТУСИ")
       #v(1mm)

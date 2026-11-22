@@ -12,17 +12,20 @@ kon2017:
 
 docpsql:
   type: web
-  title: Официальная документация PostgreSQL
+  title: Документация
   language: ru
+  parent:
+    type: web
+    title: "Postgres Professional : сайт"
   url:
-    value: https://postgrespro.ru/docs?ysclid=ldeiuoyqev648714874
-    date: 2023-01-31
+    value: https://postgrespro.ru/docs
+    date: 2026-11-22
 
 nikov2020:
   type: book
   author: ["Новиков, Б. А.", "Горшкова, Е. А.", "Графеева, Н. Г."]
   editor: Рогов, Е. В.
-  title: "Основы технологий баз данных: учеб. пособие"
+  title: "Основы технологий баз данных : учеб. пособие"
   edition: 2
   publisher:
     name: ДМК Пресс
@@ -46,7 +49,7 @@ morguniv2018:
   type: book
   author: Моргунов, Е. П.
   editor: ["Рогов, Е. В.", "Лузанов, П. В."]
-  title: "PostgreSQL. Основы языка SQL: учеб. пособие"
+  title: "PostgreSQL. Основы языка SQL : учеб. пособие"
   publisher:
     name: БХВ-Петербург
     location: СПб.

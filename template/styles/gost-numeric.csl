@@ -3,12 +3,12 @@
   <info>
     <title>МТУСИ — числовые ссылки по ГОСТ Р 7.0.5–2008</title>
     <id>https://example.org/styles/mtuci-report-references</id>
-    <updated>2026-11-21T00:00:00+00:00</updated>
+    <updated>2026-11-22T00:00:00+00:00</updated>
   </info>
   <!-- bibliography-locales.typ replaces these markers inside each rendered entry. -->
   <macro name="author">
     <names variable="author">
-      <name name-as-sort-order="all" sort-separator=" " initialize-with=". " delimiter=", "/>
+      <name name-as-sort-order="all" sort-separator=" " initialize-with=".&#160;" delimiter=", "/>
     </names>
   </macro>
   <macro name="editor">
@@ -16,7 +16,7 @@
       <if variable="editor">
         <group delimiter=" ">
           <text value="⟦mtuci:editor⟧"/>
-          <names variable="editor"><name initialize-with=". " delimiter=", "/></names>
+          <names variable="editor"><name initialize-with=".&#160;" delimiter=", "/></names>
         </group>
       </if>
     </choose>
@@ -26,28 +26,20 @@
       <if variable="translator">
         <group delimiter=" ">
           <text value="⟦mtuci:translator⟧"/>
-          <names variable="translator"><name initialize-with=". " delimiter=", "/></names>
+          <names variable="translator"><name initialize-with=".&#160;" delimiter=", "/></names>
         </group>
       </if>
     </choose>
   </macro>
-  <macro name="title">
-    <group delimiter=" ">
-      <text variable="title"/>
-      <choose>
-        <if type="webpage post-weblog" match="any"><text value="[⟦mtuci:online⟧]"/></if>
-      </choose>
-    </group>
-  </macro>
   <macro name="edition">
     <choose>
-      <if is-numeric="edition"><text variable="edition" suffix="⟦mtuci:edition⟧."/></if>
+      <if is-numeric="edition"><text variable="edition" suffix="⟦mtuci:edition⟧"/></if>
       <else><text variable="edition"/></else>
     </choose>
   </macro>
   <macro name="publication">
     <group delimiter=", ">
-      <group delimiter=": ">
+      <group delimiter="&#160;: ">
         <text variable="publisher-place"/>
         <text variable="publisher"/>
       </group>
@@ -58,15 +50,14 @@
     <choose>
       <if variable="URL">
         <group delimiter=" ">
-          <text variable="URL" prefix="URL: "/>
-          <date variable="accessed" prefix="(⟦mtuci:accessed⟧: " suffix=")">
+          <text variable="URL" prefix="URL:&#160;"/>
+          <date variable="accessed" prefix="(⟦mtuci:accessed⟧:&#160;" suffix=")">
             <date-part name="day" form="numeric-leading-zeros" suffix="."/>
             <date-part name="month" form="numeric-leading-zeros" suffix="."/>
             <date-part name="year"/>
           </date>
         </group>
       </if>
-      <else><text variable="DOI" prefix="DOI: "/></else>
     </choose>
   </macro>
   <citation collapse="citation-number">
@@ -78,34 +69,34 @@
       </group>
     </layout>
   </citation>
-  <bibliography second-field-align="flush">
+  <bibliography>
     <layout suffix=".">
-      <text variable="citation-number" suffix=". "/>
       <text variable="language" prefix="⟦mtuci:lang:" suffix="⟧"/>
-      <group delimiter=". ">
+      <text variable="citation-number" suffix=".&#160;"/>
+      <group delimiter=". – ">
         <group delimiter=" ">
-          <text macro="author" suffix="."/>
+          <text macro="author"/>
           <choose>
             <if type="patent">
-              <group delimiter=": ">
-                <text macro="title"/>
+              <group delimiter="&#160;: ">
+                <text variable="title"/>
                 <text variable="number" prefix="⟦mtuci:patent⟧&#160;"/>
               </group>
             </if>
             <else>
               <group delimiter=" ">
-                <group delimiter=": ">
-                  <text macro="title"/>
+                <group delimiter="&#160;: ">
+                  <text variable="title"/>
                   <group delimiter=" ">
                     <text variable="genre"/>
                     <text variable="number"/>
                   </group>
                 </group>
-                <text variable="container-title" prefix="// "/>
-                <group prefix="/ " delimiter="; ">
+                <group prefix="/ " delimiter=" ; ">
                   <text macro="editor"/>
                   <text macro="translator"/>
                 </group>
+                <text variable="container-title" prefix="// "/>
               </group>
             </else>
           </choose>
@@ -120,10 +111,11 @@
               <text variable="issue" prefix="⟦mtuci:issue⟧&#160;"/>
             </group>
             <text variable="page" prefix="⟦mtuci:page⟧&#160;"/>
-            <text variable="number-of-pages" suffix="&#160;⟦mtuci:page-total⟧."/>
+            <text variable="number-of-pages" suffix="&#160;⟦mtuci:page-total⟧"/>
           </else>
         </choose>
         <text macro="access"/>
+        <text variable="DOI" prefix="DOI&#160;"/>
       </group>
     </layout>
   </bibliography>

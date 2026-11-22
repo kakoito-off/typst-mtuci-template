@@ -1,3 +1,5 @@
+#let toc-title = ""
+
 #import "../../../../../template/lib.typ": listing
 
 = Реализация

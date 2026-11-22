@@ -1,21 +1,27 @@
 #import "references/load.typ": library
 #import "styles/template.typ": report-style
 #import "styles/heading.typ": centered-section
+#import "styles/outline.typ": chapter-with-toc-title
 #import "styles/bibliography.typ": bibliography-citations
 #import "styles/listing.typ": listing
 #import "styles/table.typ": continued-table
 #import "styles/example.typ": example-divider, example-emphasis
 #import "sections/title.typ": title-page
 #import "sections/references.typ": reference-section
-#import "sections/bibliographic-note.typ": bibliographic-note
 
-#let lab-report(data, chapters, include-section, read-data) = {
+#let lab-report(data, chapters, load-section, read-data, bibliographic-note: none) = {
+  let section-content(section) = if type(section) == module { include section } else { section }
+  let line-spacing = data.at("layout", default: (:)).at("line-spacing", default: 1)
+  if "line-spacing" in sys.inputs {
+    line-spacing = float(sys.inputs.at("line-spacing"))
+  }
   let bibliography-file = data.bibliography.file
   let sources = library(read-data(bibliography-file), json-format: bibliography-file.ends-with(".json"))
 
   show: report-style.with(
     author: data.student.name,
     title: if data.theme != "" { data.theme } else { [Лабораторная работа № #data.lab-number] },
+    line-spacing: line-spacing,
   )
   show: bibliography-citations.with(sources)
 
@@ -24,27 +30,30 @@
 
   pagebreak(weak: true)
   centered-section[Введение]
-  include-section("sections/introduction.typ")
+  section-content(load-section("sections/introduction.typ"))
 
   heading[Цель работы]
-  include-section("sections/goal.typ")
+  section-content(load-section("sections/goal.typ"))
 
-  for chapter in chapters {
-    include-section(chapter)
+  for file in chapters {
+    let chapter = load-section(file)
+    let toc-title = if type(chapter) == module and "toc-title" in chapter {
+      chapter.toc-title
+    } else {
+      ""
+    }
+    chapter-with-toc-title(toc-title, section-content(chapter))
   }
 
   pagebreak(weak: true)
   centered-section[Заключение]
-  include-section("sections/conclusion.typ")
+  section-content(load-section("sections/conclusion.typ"))
 
   reference-section(sources)
-
-  if data.sections.bibliographic-note {
-    bibliographic-note(sources, yaml(read-data(data.bibliography.publications)))
-  }
+  bibliographic-note
 
   if data.sections.examples {
     pagebreak(weak: true)
-    include-section("sections/examples.typ")
+    section-content(load-section("sections/examples.typ"))
   }
 }

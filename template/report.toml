@@ -15,13 +15,14 @@ group = "БФИ0000"
 name = "Фамилия И. О."
 position = "Должность преподавателя"
 
+[layout]
+# Межстрочный интервал основного текста: 1 или 1.5.
+line-spacing = 1
+
 [sections]
-# Справка включается при наличии групп или записей с меткой own.
-bibliographic-note = false
 examples = false
 
 [bibliography]
 # Поддерживаются Hayagriva YAML и JSON с записями article и patent.
 # Язык источника указывается в language (YAML) или lang (JSON).
 file = "references/library.yml"
-publications = "references/publications.yml"

@@ -1,26 +1,63 @@
 typst-modules:
   type: web
-  title: Scripting
+  title: "Scripting: Modules"
   language: en
-  url: https://typst.app/docs/reference/scripting/#modules
+  parent:
+    type: web
+    title: Typst Documentation
+  url:
+    value: https://typst.app/docs/reference/scripting/#modules
+    date: 2026-11-22
 
 typst-heading:
   type: web
   title: Heading
   language: en
-  url: https://typst.app/docs/reference/model/heading/
+  parent:
+    type: web
+    title: Typst Documentation
+  url:
+    value: https://typst.app/docs/reference/model/heading/
+    date: 2026-11-22
 
 typst-bibliography:
   type: web
   title: Bibliography
   language: en
-  url: https://typst.app/docs/reference/model/bibliography/
+  parent:
+    type: web
+    title: Typst Documentation
+  url:
+    value: https://typst.app/docs/reference/model/bibliography/
+    date: 2026-11-22
 
 gost-705:
   type: web
-  title: "ГОСТ Р 7.0.5–2008. Библиографическая ссылка. Общие требования и правила составления"
+  title: >-
+    ГОСТ Р 7.0.5-2008. Библиографическая ссылка. Общие требования и правила
+    составления : нац. стандарт Российской Федерации : утв. и введён в действие
+    приказом Росстандарта от 28.04.2008 № 95-ст : введён впервые : дата введения
+    2009-01-01
   language: ru
-  date: 2008
+  parent:
+    type: web
+    title: "Росстандарт : портал стандартов"
   url:
     value: https://protect.gost.ru/gost/details/2eef7820-44bc-49a4-bf1f-fe51c54039dc
-    date: 2026-11-21
+    date: 2026-11-22
+
+gost-7108:
+  type: web
+  title: >-
+    ГОСТ Р 7.0.108-2022. Библиографические ссылки на электронные документы,
+    размещенные в информационно-телекоммуникационных сетях. Общие требования
+    к составлению и оформлению : нац. стандарт Российской Федерации : утв. и
+    введён в действие приказом Росстандарта от 12.05.2022 № 284-ст : введён
+    впервые : дата введения 2022-06-01
+  language: ru
+  parent:
+    type: web
+    title: "Росстандарт : портал стандартов"
+  url:
+    value: https://protect.gost.ru/gost/details/df775619-cc9b-4cea-af6e-83e31a0aab9e
+    date: 2026-11-22

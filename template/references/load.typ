@@ -4,7 +4,6 @@
     author: record.authors.map(person => person.family + ", " + person.given),
     language: record.at("lang", default: "ru"),
     title: record.title,
-    tags: record.at("tags", default: ()),
   )
   if record.type == "article" {
     common + (

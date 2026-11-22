@@ -15,12 +15,12 @@ group = "БФИхххх"
 name = "Полищук Ю. В."
 position = "д.т.н., профессор"
 
+[layout]
+line-spacing = 1
+
 [sections]
-# Справка включается при наличии групп или записей с меткой own.
-bibliographic-note = false
 examples = true
 
 [bibliography]
 # Поддерживаются Hayagriva YAML и JSON с записями article и patent.
 file = "references/library.yml"
-publications = "references/publications.yml"

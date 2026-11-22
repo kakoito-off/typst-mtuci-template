@@ -1,5 +1,6 @@
 # PDF, которые собираются из файлов Typst.
 **/report.pdf
+**/report-1.5.pdf
 
 # Промежуточные файлы LaTeX.
 *.aux

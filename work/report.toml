@@ -14,10 +14,11 @@ group = "БФИ0000"
 name = "Фамилия И. О."
 position = "Должность преподавателя"
 
+[layout]
+line-spacing = 1
+
 [sections]
-bibliographic-note = false
 examples = false
 
 [bibliography]
 file = "references/library.yml"
-publications = "references/publications.yml"

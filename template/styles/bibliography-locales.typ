@@ -4,36 +4,36 @@
 #let terms = (
   ru: (
     volume: "Т.", issue: "№", page: "С.", page-total: "с", edition: "-е изд",
-    editor: "под ред.", translator: "пер.", online: "Электронный ресурс", accessed: "дата обращения",
+    editor: "ред.", translator: "пер.", accessed: "дата\u{00a0}обращения",
     patent: "Пат. №", holder: "правообладатель", filed: "заявл.", published: "опубл.",
   ),
   en: (
     volume: "Vol.", issue: "No.", page: "P.", page-total: "p", edition: " ed",
-    editor: "ed. by", translator: "transl. by", online: "Electronic resource", accessed: "accessed",
+    editor: "ed. by", translator: "transl. by", accessed: "accessed",
     patent: "Patent No.", holder: "patent holder", filed: "filed", published: "published",
   ),
   de: (
     volume: "Bd.", issue: "Nr.", page: "S.", page-total: "S", edition: ". Aufl",
-    editor: "Hrsg.", translator: "Übers.", online: "Elektronische Ressource", accessed: "abgerufen am",
+    editor: "Hrsg.", translator: "Übers.", accessed: "abgerufen am",
     patent: "Patent Nr.", holder: "Patentinhaber", filed: "angemeldet",
     published: "veröffentlicht",
   ),
   fr: (
     volume: "Vol.", issue: "nº", page: "P.", page-total: "p", edition: "e éd",
-    editor: "sous la dir. de", translator: "trad. par", online: "Ressource électronique", accessed: "consulté le",
+    editor: "sous la dir. de", translator: "trad. par", accessed: "consulté\u{00a0}le",
     patent: "Brevet nº", holder: "titulaire", filed: "déposé", published: "publié",
   ),
 )
 
 #let reference-terms(locale) = terms.at(lower(locale.split("-").first()), default: terms.en)
 
-#let localized-entry(locale, body) = {
+#let localized-entry(locale, body, prefix: none) = {
   let parts = locale.split("-")
   let lang = lower(parts.first())
   let region = parts.slice(1).find(part => part.match(regex("^[a-zA-Z]{2}$")) != none)
   let labels = reference-terms(locale)
   set text(lang: lang, region: region)
-  show language-marker: none
+  show language-marker: prefix
   show regex("[0-9]+⟦mtuci:edition⟧"): item => {
     let value = item.text.match(regex("^[0-9]+")).text
     let number = int(value)
@@ -51,6 +51,9 @@
     }
     value + suffix
   }
-  show term-marker: item => labels.at(item.text.match(term-marker).captures.first())
+  show term-marker: item => text(
+    hyphenate: false,
+    labels.at(item.text.match(term-marker).captures.first()),
+  )
   body
 }
